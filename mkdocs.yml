@@ -1,0 +1,70 @@
+site_name: Maira
+site_description: Plataforma open source para protectoras de animales pequeñas
+site_url: https://finididevsp.github.io/Maira/
+repo_url: https://github.com/FinidiDevSp/Maira
+repo_name: FinidiDevSp/Maira
+edit_uri: edit/develop/docs/
+
+theme:
+  name: material
+  language: es
+  font:
+    text: Inter
+    code: JetBrains Mono
+  palette:
+    # Dark mode según sistema, con toggle (decisión D-009)
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange   # aproximación Material a terracota #BF5B3B
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Cambiar a modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Cambiar a modo claro
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+
+nav:
+  - Inicio: index.md
+  - Producto:
+      - Contexto de producto: product/PRODUCT_CONTEXT.md
+      - Plan: product/PLAN.md
+      - Glosario: product/GLOSSARY.md
+  - Técnico:
+      - Arquitectura: technical/ARCHITECTURE.md
+      - Modelo de datos: technical/DATA_MODEL.md
+      - Contratos de API: technical/API_CONTRACTS.md
+      - Diseño y UX: technical/DESIGN.md
+      - Decisiones (ADR): technical/DECISIONS.md
+  - Planificación:
+      - Backlog: planning/BACKLOG.md
+      - Roadmap: planning/ROADMAP.md
+      - Changelog: planning/CHANGELOG.md
+      - Pasarela ChatGPT: planning/CHATGPT_GATEWAY.md
+  - Operación:
+      - Puesta en marcha: operations/SETUP.md
+      - Entorno: operations/ENVIRONMENT.md
+      - Operaciones: operations/OPERATIONS.md
+      - Runbooks: operations/RUNBOOKS.md
+      - Seguridad: operations/SECURITY.md
+  - Meta:
+      - Testing: meta/TESTING.md
+      - Privacidad (RGPD): meta/PRIVACY.md
+      - Sistema documental: meta/DOCUMENTATION.md

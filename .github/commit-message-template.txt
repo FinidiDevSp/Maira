@@ -1,0 +1,11 @@
+# <tipo>: <resumen en imperativo, español, máx 72 caracteres>
+#
+# Tipos: feat | fix | docs | refactor | test | chore | perf | ci
+# Ejemplos:
+#   feat: añadir generación de ficha con IA
+#   fix: corregir validación de email en signup
+#   docs: actualizar runbook de despliegue
+#
+# Cuerpo (opcional): qué y por qué, no cómo.
+#
+# Referencia a item si aplica: Refs: FEATURE-003

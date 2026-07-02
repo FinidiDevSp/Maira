@@ -1,0 +1,108 @@
+name: CI
+
+on:
+  push:
+    branches: [develop, main]
+  pull_request:
+    branches: [develop, main]
+
+jobs:
+  planning:
+    name: Render de planificación al día
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: El render no produce cambios (vistas al día con los items)
+        run: |
+          python scripts/render_planning.py
+          git diff --exit-code -- docs || {
+            echo "::error::Las vistas no están al día. Ejecuta 'make render-planning' y commitea."; exit 1; }
+
+  docs:
+    name: Sitio de documentación
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements-docs.txt
+      - run: mkdocs build
+
+  backend:
+    name: Backend (lint + tests)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ¿Existe el backend? (FEATURE-000 lo crea)
+        id: check
+        run: |
+          if [ -f backend/pyproject.toml ]; then echo "exists=true" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/setup-python@v5
+        if: steps.check.outputs.exists == 'true'
+        with:
+          python-version: "3.11"
+      - name: Instalar dependencias
+        if: steps.check.outputs.exists == 'true'
+        run: cd backend && pip install -e ".[dev]"
+      - name: Lint (ruff + mypy)
+        if: steps.check.outputs.exists == 'true'
+        run: |
+          cd backend
+          ruff check .
+          ruff format --check .
+          mypy src
+      - name: Tests con cobertura mínima 70%
+        if: steps.check.outputs.exists == 'true'
+        run: cd backend && pytest --cov=src --cov-fail-under=70
+
+  frontend:
+    name: Frontend (lint + tests)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ¿Existe el frontend? (FEATURE-000 lo crea)
+        id: check
+        run: |
+          if [ -f frontend/package.json ]; then echo "exists=true" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/setup-node@v4
+        if: steps.check.outputs.exists == 'true'
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Instalar dependencias
+        if: steps.check.outputs.exists == 'true'
+        run: cd frontend && npm ci
+      - name: Lint + tipos
+        if: steps.check.outputs.exists == 'true'
+        run: |
+          cd frontend
+          npm run lint
+          npx tsc --noEmit
+      - name: Tests (Vitest)
+        if: steps.check.outputs.exists == 'true'
+        run: cd frontend && npm run test -- --coverage
+
+  security:
+    name: Auditoría de dependencias
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: pip-audit (backend)
+        run: |
+          if [ -f backend/pyproject.toml ]; then
+            pip install pip-audit && cd backend && pip-audit . || true
+          else
+            echo "Sin backend todavía"
+          fi
+      - name: npm audit (frontend)
+        run: |
+          if [ -f frontend/package.json ]; then
+            cd frontend && npm audit --audit-level=high || true
+          else
+            echo "Sin frontend todavía"
+          fi

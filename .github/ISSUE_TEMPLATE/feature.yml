@@ -1,0 +1,34 @@
+name: ✨ Feature
+description: Propuesta de nueva funcionalidad o mejora
+title: "[FEATURE] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problema
+    attributes:
+      label: ¿Qué problema resuelve?
+      description: Cuéntalo desde el punto de vista de la voluntaria/protectora.
+    validations:
+      required: true
+  - type: textarea
+    id: propuesta
+    attributes:
+      label: ¿Qué propones?
+    validations:
+      required: true
+  - type: dropdown
+    id: usuario
+    attributes:
+      label: ¿A quién beneficia?
+      options:
+        - Voluntaria
+        - Coordinadora
+        - Veterinario colaborador
+        - Desarrolladores/comunidad
+    validations:
+      required: true
+  - type: textarea
+    id: alternativas
+    attributes:
+      label: Alternativas consideradas
+      description: ¿Hay otra forma de resolverlo? ¿Está ya en el backlog de ideas (BACKLOG.md raíz)?

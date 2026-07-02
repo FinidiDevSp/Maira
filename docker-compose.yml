@@ -1,0 +1,89 @@
+# Maira — entorno local.
+# Uso principal (día a día):   docker compose up -d          → solo infra (db + qdrant)
+# Plan B demo ante el tribunal: docker compose --profile app up -d --build → todo end-to-end
+# El despliegue real para los jueces es Vercel + Render + Supabase (coste 0€).
+
+name: maira
+
+services:
+  maira-db:
+    image: postgres:16-alpine
+    container_name: maira-db
+    environment:
+      POSTGRES_USER: maira
+      POSTGRES_PASSWORD: maira
+      POSTGRES_DB: maira
+    ports:
+      - "5432:5432"
+    volumes:
+      - maira-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U maira -d maira"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    networks: [maira-net]
+
+  maira-qdrant:
+    image: qdrant/qdrant:latest
+    container_name: maira-qdrant
+    ports:
+      - "6333:6333"
+    volumes:
+      - maira-qdrant-data:/qdrant/storage
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c ':> /dev/tcp/127.0.0.1/6333' || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    networks: [maira-net]
+
+  maira-backend:
+    build:
+      context: .
+      dockerfile: docker/backend/Dockerfile
+      target: development
+    container_name: maira-backend
+    profiles: [app]
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+asyncpg://maira:maira@maira-db:5432/maira
+      QDRANT_URL: http://maira-qdrant:6333
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    depends_on:
+      maira-db:
+        condition: service_healthy
+      maira-qdrant:
+        condition: service_healthy
+    networks: [maira-net]
+
+  maira-frontend:
+    build:
+      context: .
+      dockerfile: docker/frontend/Dockerfile
+      target: development
+    container_name: maira-frontend
+    profiles: [app]
+    env_file: .env
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - maira-frontend-node-modules:/app/node_modules
+    depends_on:
+      - maira-backend
+    networks: [maira-net]
+
+volumes:
+  maira-db-data:
+  maira-qdrant-data:
+  maira-frontend-node-modules:
+
+networks:
+  maira-net:
+    name: maira-net

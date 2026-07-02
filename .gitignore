@@ -1,0 +1,54 @@
+# === Secretos ===
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.secrets.baseline.local
+
+# === Python (backend) ===
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+coverage.xml
+dist/
+build/
+
+# === Node (frontend) ===
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+.eslintcache
+npm-debug.log*
+pnpm-debug.log*
+
+# === Docs ===
+site/
+
+# === Docker ===
+*.local.yml
+
+# === IDE / SO ===
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Binarios pesados / temporales ===
+*.pdf
+*.docx
+*.xlsx
+*.zip
+*.mp4
+*.mov
+tmp/
+*.tmp
