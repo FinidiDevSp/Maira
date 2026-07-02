@@ -14,4 +14,4 @@
 | [FEATURE-006](FEATURE-006.md) | Panel de control y exportación de datos | listo | 0.6 |
 | [FEATURE-007](FEATURE-007.md) | Pulido final: accesibilidad, pentest, piloto real y despliegue estable | listo | 0.6 |
 
-_Última regeneración: 2026-07-02 · 8 items_
+_8 items registrados_

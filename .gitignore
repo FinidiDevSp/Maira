@@ -36,6 +36,9 @@ site/
 # === Docker ===
 *.local.yml
 
+# === Claude Code (config personal) ===
+.claude/settings.local.json
+
 # === IDE / SO ===
 .vscode/
 .idea/

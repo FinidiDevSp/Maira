@@ -16,7 +16,6 @@ from __future__ import annotations
 
 import re
 import sys
-from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -165,7 +164,7 @@ def render_index(items: list[dict[str, str]]) -> None:
         hito = it["hito"] or "—"
         lines.append(f"| [{it['id']}]({it['_file']}) | {it.get('titulo', '')} | {it['estado']} | {hito} |")
     lines.append("")
-    lines.append(f"_Última regeneración: {date.today().isoformat()} · {len(items)} items_")
+    lines.append(f"_{len(items)} items registrados_")
     INDEX.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
 
 
