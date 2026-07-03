@@ -16,7 +16,7 @@ Flujo: trabajo en `develop` → merge a `main` = release → Render y Vercel des
 
 ## Monitorización
 
-- **Healthchecks.io**: ping a `GET /health` cada 5 min → email si el backend no responde > 1 min. Mantiene además el free tier de Render despierto en horario razonable.
+- **Uptime**: el workflow `.github/workflows/uptime.yml` sondea `GET /health` de producción cada 10 min y reenvía el resultado a **Healthchecks.io** (check `maira-backend-health`, period 10 min + grace 10 min → email si ~20 min sin señal; fallo del sondeo envía `/fail` = alerta inmediata). La ping URL vive en el secret de GitHub `HEALTHCHECKS_PING_URL`, nunca en el repo. Efecto secundario deseado: mantiene despierto el free tier de Render.
 - **Logs**: structlog JSON → stdout → panel de Render (retención 7 días).
 - **Sin Sentry ni analítica de terceros** (D-010 y anti-métricas de ANALYSIS.md §20): las métricas de producto salen de queries SQL.
 
