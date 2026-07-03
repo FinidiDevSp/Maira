@@ -13,9 +13,9 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 - Verificación end-to-end con Docker: `docker compose --profile app up` levanta los 4 contenedores `maira-*` y la home consume `/health`.
 - `dependabot.yml` para pip, npm y GitHub Actions.
 
-### Pendiente para cerrar FEATURE-000
+### Desplegado (cierre de FEATURE-000)
 
-- Crear el servicio en Render y el proyecto en Vercel (acción manual en dashboards) y completar el primer push a GitHub (scope `workflow` del token).
+- **Producción a coste 0€**: frontend en Vercel (https://maira-opal.vercel.app, rama `main`), backend en Render Frankfurt (https://maira-backend-sj81.onrender.com), base de datos Supabase UE con la migración 0001 aplicada. CORS restringido al origen de Vercel. Repo público con CI verde, `main` protegida, CodeQL y Dependabot activos.
 
 ## [0.0.1] — 2026-07-02
 

@@ -18,7 +18,7 @@ Más de 1.500 protectoras en España; el 90% de las pequeñas tienen menos de 1.
 
 ## Probarlo
 
-- 🌐 **Demo desplegada:** *(URL de Vercel — disponible al completar FEATURE-000)*
+- 🌐 **Demo desplegada:** **https://maira-opal.vercel.app** *(el backend en free tier puede tardar unos segundos en despertar)*
 - 🐳 **En local con Docker:**
 
 ```bash

@@ -12,6 +12,8 @@
 
 Flujo: trabajo en `develop` → merge a `main` = release → Render y Vercel despliegan solos → smoke test manual (health + login).
 
+**URLs de producción:** frontend https://maira-opal.vercel.app · backend https://maira-backend-sj81.onrender.com (health: `/health`).
+
 ## Monitorización
 
 - **Healthchecks.io**: ping a `GET /health` cada 5 min → email si el backend no responde > 1 min. Mantiene además el free tier de Render despierto en horario razonable.

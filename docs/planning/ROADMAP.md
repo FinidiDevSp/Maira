@@ -20,7 +20,7 @@ Después del MVP: fase 2 (multi-protectora, i18n) y fase 3 (Elpis) — ver [`ANA
 <!-- RENDER:START -->
 | Hito | Items | Hechos | Progreso |
 |---|---|---|---|
-| **0.1** | 1 | 0 | 0% |
+| **0.1** | 1 | 1 | 100% |
 | **0.2** | 1 | 0 | 0% |
 | **0.3** | 2 | 0 | 0% |
 | **0.4** | 1 | 0 | 0% |
@@ -29,7 +29,7 @@ Después del MVP: fase 2 (multi-protectora, i18n) y fase 3 (Elpis) — ver [`ANA
 
 ### Hito 0.1
 
-- [FEATURE-000](items/FEATURE-000.md) — Inicialización y andamiaje del proyecto · 🔨 En desarrollo
+- [FEATURE-000](items/FEATURE-000.md) — Inicialización y andamiaje del proyecto · ✅ Hecho
 
 ### Hito 0.2
 

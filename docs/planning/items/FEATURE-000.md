@@ -2,7 +2,7 @@
 id: FEATURE-000
 tipo: feature
 titulo: "Inicialización y andamiaje del proyecto"
-estado: desarrollo
+estado: hecho
 prioridad: alta
 hito: "0.1"
 duplicado_de: null
@@ -58,15 +58,15 @@ Sin esto no hay nada demostrable. Corresponde a la "Fase 0 — Pre-MVP" de `ANAL
 ## Criterios de aceptación / Casuística a cubrir
 
 - [x] `pytest` en verde con cobertura ≥ 70% de lo existente. *(2026-07-03: 8/8 tests, 100%)*
-- [x] `GET /health` responde 200 en local. *(pendiente en Render: requiere crear el servicio — ver nota)*
-- [ ] La home en Vercel carga y muestra el estado del backend. *(pendiente: crear proyecto Vercel)*
+- [x] `GET /health` responde 200 en local y en Render. *(2026-07-03: https://maira-backend-sj81.onrender.com/health)*
+- [x] La home en Vercel carga y muestra el estado del backend. *(2026-07-03: https://maira-opal.vercel.app, CORS verificado)*
 - [x] `docker compose --profile app up` funciona end-to-end. *(2026-07-03: 4 contenedores, health ok, home ok)*
 - [x] CI en verde (lint + tests + docs + render de planificación). *(2026-07-03: run 28642388300 en develop)*
 - [x] Sin secretos en el repo (repo público): `.env` fuera de git, `.env.example` sin valores reales.
 - [x] Con el backend dormido (Render free), la home explica "arrancando…" con reintento. *(test verde)*
 
-> **Nota de cierre parcial (2026-07-03):** el andamiaje local está completo y verificado
-> (backend 8/8 tests 100% cobertura, frontend 3/3, migración upgrade/downgrade contra
-> Postgres real, seed idempotente, compose end-to-end). Quedan los 3 criterios que
-> dependen de acciones en dashboards externos: crear el servicio en Render, el proyecto
-> en Vercel, y completar el primer push (scope `workflow` del token de gh).
+> **Cierre (2026-07-03):** 7/7 criterios cumplidos. Producción: frontend
+> https://maira-opal.vercel.app (Vercel, rama main) → backend
+> https://maira-backend-sj81.onrender.com (Render Frankfurt, Python) → Supabase UE
+> (migración 0001 aplicada, Session pooler). CORS restringido al origen de Vercel.
+> CI verde en develop. Coste total: 0€.

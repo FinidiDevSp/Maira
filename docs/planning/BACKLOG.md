@@ -6,22 +6,17 @@
 
 ## 📍 Estado actual
 
-- **Hito activo:** 0.1 — Andamiaje
-- **Progreso:** 0/8 items en `hecho`; FEATURE-000 en `desarrollo`, ~90% (local + GitHub + CI verde)
-- **Siguiente:** cerrar FEATURE-000 — solo falta el deploy en Render (backend) y Vercel (frontend)
-- **Bloqueos:** ninguno (los deploys requieren crear los servicios en los dashboards, acción manual)
+- **Hito activo:** 0.2 — Puerta de entrada (auth)
+- **Progreso:** 1/8 items en `hecho` — hito 0.1 completado: Maira desplegada end-to-end a 0€
+- **Producción:** https://maira-opal.vercel.app → https://maira-backend-sj81.onrender.com → Supabase UE
+- **Siguiente:** FEATURE-001 (registro y acceso de la protectora) — en `listo`, plan en el item
+- **Bloqueos:** ninguno
 - **Recordatorio permanente:** TFM ante tribunal → todo desplegado, gratis y demostrable
 - **Actualizado:** 2026-07-03
 
 ## Items abiertos por estado
 
 <!-- RENDER:START -->
-### 🔨 En desarrollo
-
-| Item | Título | Prioridad | Hito |
-|---|---|---|---|
-| [FEATURE-000](items/FEATURE-000.md) | Inicialización y andamiaje del proyecto | alta | 0.1 |
-
 ### 🟢 Listo para desarrollo
 
 | Item | Título | Prioridad | Hito |
