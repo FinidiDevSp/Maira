@@ -3,7 +3,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from src.api import auth, health
+from src.api import auth, health, protectora
 from src.config import get_settings
 from src.core.exceptions import registrar_handlers
 from src.core.logging import configurar_logging
@@ -31,6 +31,7 @@ def create_app() -> FastAPI:
     registrar_handlers(app)
     app.include_router(health.router)
     app.include_router(auth.router)
+    app.include_router(protectora.router)
     return app
 
 
