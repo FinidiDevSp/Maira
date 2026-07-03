@@ -61,7 +61,7 @@ Sin esto no hay nada demostrable. Corresponde a la "Fase 0 — Pre-MVP" de `ANAL
 - [x] `GET /health` responde 200 en local. *(pendiente en Render: requiere crear el servicio — ver nota)*
 - [ ] La home en Vercel carga y muestra el estado del backend. *(pendiente: crear proyecto Vercel)*
 - [x] `docker compose --profile app up` funciona end-to-end. *(2026-07-03: 4 contenedores, health ok, home ok)*
-- [ ] CI en verde (lint + tests + docs + render de planificación). *(pendiente: primer push a GitHub)*
+- [x] CI en verde (lint + tests + docs + render de planificación). *(2026-07-03: run 28642388300 en develop)*
 - [x] Sin secretos en el repo (repo público): `.env` fuera de git, `.env.example` sin valores reales.
 - [x] Con el backend dormido (Render free), la home explica "arrancando…" con reintento. *(test verde)*
 

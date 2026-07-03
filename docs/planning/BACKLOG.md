@@ -7,9 +7,9 @@
 ## 📍 Estado actual
 
 - **Hito activo:** 0.1 — Andamiaje
-- **Progreso:** 0/8 items en `hecho`; FEATURE-000 en `desarrollo`, ~85% (local completo y verificado)
-- **Siguiente:** cerrar FEATURE-000 — falta: deploy en Render + Vercel y primer push/CI verde
-- **Bloqueos:** push a GitHub pendiente del scope `workflow` en el token de gh (`gh auth refresh -h github.com -s workflow`)
+- **Progreso:** 0/8 items en `hecho`; FEATURE-000 en `desarrollo`, ~90% (local + GitHub + CI verde)
+- **Siguiente:** cerrar FEATURE-000 — solo falta el deploy en Render (backend) y Vercel (frontend)
+- **Bloqueos:** ninguno (los deploys requieren crear los servicios en los dashboards, acción manual)
 - **Recordatorio permanente:** TFM ante tribunal → todo desplegado, gratis y demostrable
 - **Actualizado:** 2026-07-03
 
