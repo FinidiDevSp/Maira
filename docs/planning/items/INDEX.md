@@ -13,5 +13,6 @@
 | [FEATURE-005](FEATURE-005.md) | Triaje veterinario con IA (foto + descripción) | listo | 0.5 |
 | [FEATURE-006](FEATURE-006.md) | Panel de control y exportación de datos | listo | 0.6 |
 | [FEATURE-007](FEATURE-007.md) | Pulido final: accesibilidad, pentest, piloto real y despliegue estable | listo | 0.6 |
+| [IMPROVEMENT-001](IMPROVEMENT-001.md) | Actualizar Next.js para resolver los avisos de seguridad de Dependabot | recibido | — |
 
-_8 items registrados_
+_9 items registrados_

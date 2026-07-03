@@ -16,7 +16,7 @@
 | Recurso | Endpoints |
 |---|---|
 | Salud | `GET /health` |
-| Auth | `POST /api/v1/auth/signup` · `POST /api/v1/auth/login` · `POST /api/v1/auth/refresh` |
+| Auth | `POST /api/v1/auth/signup` — login/refresh NO tienen endpoint: los hace el frontend contra Supabase Auth (magic link, D-015) |
 | Protectora | `GET/PATCH /api/v1/protectora/me` · `GET/POST /api/v1/protectora/usuarios` |
 | Animales | `GET/POST /api/v1/animales` · `GET/PATCH/DELETE /api/v1/animales/{id}` |
 | Ficha IA | `POST /api/v1/animales/{id}/ficha/generar` · `POST /api/v1/animales/{id}/ficha/regenerar` |

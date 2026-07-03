@@ -2,6 +2,17 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado semántico.
 
+## [Sin publicar]
+
+### Añadido (FEATURE-001, en curso)
+
+- Autenticación completa: verificación de JWT de Supabase en backend (JWKS o HS256 legacy), roles admin/editor/lectura, errores RFC 7807 en español llano y rate limiting.
+- Registro de protectora passwordless (`POST /api/v1/auth/signup`) con alta atómica y compensación si algo falla a medias.
+- Perfil de protectora (ver/editar) y gestión de voluntarias con invitaciones por email y rol.
+- Row Level Security en `protectora` y `usuario` (migración 0002, aplicada en Supabase).
+- Frontend: login con magic link, registro, callback de sesión, página de perfil con invitaciones (solo admin) e i18n con next-intl desde el primer componente.
+- Capturado IMPROVEMENT-001: subida de Next.js por avisos de seguridad de Dependabot.
+
 ## [0.0.2] — 2026-07-03
 
 ### Añadido

@@ -20,6 +20,7 @@
 | `DATABASE_URL` | backend | `postgresql+asyncpg://...` (local: docker; prod: Supabase) |
 | `SUPABASE_URL` / `SUPABASE_ANON_KEY` | ambos | Proyecto Supabase (la anon es pública por diseño) |
 | `SUPABASE_SERVICE_KEY` | backend | ⚠️ Clave privilegiada: solo backend, nunca `NEXT_PUBLIC_` |
+| `SUPABASE_JWT_SECRET` | backend | Solo si el proyecto usa la clave JWT legacy (HS256); con JWT Signing Keys (JWKS) se deja vacía |
 | `LLM_PROVIDER` | backend | `groq` (defecto) o `gemini` — conmuta el proveedor |
 | `GROQ_API_KEY` / `GEMINI_API_KEY` | backend | LLM principal y fallback |
 | `HF_API_TOKEN` | backend | HuggingFace Inference (CLIP) |

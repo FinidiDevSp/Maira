@@ -63,10 +63,15 @@ Una voluntaria puede registrar su protectora, entrar con magic link (sin recorda
 
 ## Criterios de aceptación / Casuística a cubrir
 
-- [ ] Signup completo en < 5 minutos con verificación de email.
-- [ ] Login con magic link funcional; fallback email/contraseña (≥ 12 caracteres).
-- [ ] Una usuaria JAMÁS ve datos de otra protectora (test automatizado de RLS).
-- [ ] Invitación caducada o reutilizada → error claro, sin crear usuaria.
-- [ ] Rol `lectura` bloqueado en toda escritura (API y UI).
-- [ ] Términos y política de privacidad aceptados en el registro (texto llano).
-- [ ] Accesible: flujo completo navegable por teclado y con NVDA.
+- [ ] Signup completo en < 5 minutos con verificación de email. *(código listo; pendiente prueba real tras configurar claves)*
+- [ ] Login con magic link funcional. *(passwordless por D-015; pendiente prueba real)*
+- [x] Una usuaria JAMÁS ve datos de otra protectora. *(tests API multi-tenant + RLS en migración 0002, aplicada en Supabase)*
+- [ ] Invitación caducada o reutilizada → error claro. *(la gestiona Supabase; validar en la prueba real)*
+- [x] Rol `lectura` bloqueado en toda escritura. *(tests 403 en API; formulario de invitar oculto en UI)*
+- [x] Términos y política de privacidad aceptados en el registro. *(validador backend + checkbox obligatorio)*
+- [ ] Accesible: flujo completo navegable por teclado y con NVDA. *(labels/aria/focus hechos; revisión manual pendiente)*
+
+> **Progreso (2026-07-03):** backend completo en 5 tandas TDD (JWT+roles, signup con
+> compensación, perfil, invitaciones, RLS) — 31 tests, 90% cobertura. Frontend completo
+> (login OTP, signup, callback, perfil con invitaciones, next-intl). Falta: configurar
+> claves de Supabase en Vercel/Render + Redirect URLs, y la prueba real end-to-end.

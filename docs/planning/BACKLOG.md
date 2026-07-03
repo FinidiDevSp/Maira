@@ -7,10 +7,10 @@
 ## 📍 Estado actual
 
 - **Hito activo:** 0.2 — Puerta de entrada (auth)
-- **Progreso:** 1/8 items en `hecho` — hito 0.1 completado: Maira desplegada end-to-end a 0€
+- **Progreso:** 1/9 en `hecho`; FEATURE-001 en `desarrollo` ~85% (backend 5 tandas TDD + frontend completos)
 - **Producción:** https://maira-opal.vercel.app → https://maira-backend-sj81.onrender.com → Supabase UE
-- **Siguiente:** FEATURE-001 (registro y acceso de la protectora) — en `listo`, plan en el item
-- **Bloqueos:** ninguno
+- **Siguiente:** configurar claves Supabase en Vercel/Render + Redirect URLs y hacer la prueba real del magic link
+- **Bloqueos:** la prueba end-to-end requiere config manual en dashboards (checklist entregada al usuario)
 - **Recordatorio permanente:** TFM ante tribunal → todo desplegado, gratis y demostrable
 - **Actualizado:** 2026-07-03
 
@@ -33,4 +33,10 @@
 | [FEATURE-005](items/FEATURE-005.md) | Triaje veterinario con IA (foto + descripción) | alta | 0.5 |
 | [FEATURE-007](items/FEATURE-007.md) | Pulido final: accesibilidad, pentest, piloto real y despliegue estable | alta | 0.6 |
 | [FEATURE-006](items/FEATURE-006.md) | Panel de control y exportación de datos | media | 0.6 |
+
+### 📥 Recibido
+
+| Item | Título | Prioridad | Hito |
+|---|---|---|---|
+| [IMPROVEMENT-001](items/IMPROVEMENT-001.md) | Actualizar Next.js para resolver los avisos de seguridad de Dependabot | alta | — |
 <!-- RENDER:END -->
