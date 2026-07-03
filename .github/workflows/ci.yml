@@ -68,7 +68,7 @@ jobs:
         id: check
         run: |
           if [ -f frontend/package.json ]; then echo "exists=true" >> "$GITHUB_OUTPUT"; fi
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         if: steps.check.outputs.exists == 'true'
         with:
           node-version: "20"
