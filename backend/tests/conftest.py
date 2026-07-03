@@ -14,6 +14,7 @@ ENV_TEST = {
     "DATABASE_URL": "sqlite+aiosqlite:///:memory:",
     "SUPABASE_URL": "https://test-proyecto.supabase.co",
     "SUPABASE_JWT_SECRET": "secreto-jwt-solo-tests-0123456789abcdef",
+    "SUPABASE_SERVICE_KEY": "service-key-solo-tests",
 }
 
 
