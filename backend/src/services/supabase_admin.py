@@ -41,11 +41,15 @@ def _headers(settings: Settings) -> dict[str, str]:
 async def crear_cuenta_invitada(email: str) -> uuid.UUID:
     """Crea la cuenta y dispara el email de invitación. Devuelve el id de la cuenta."""
     settings = _config()
+    # El enlace del email debe aterrizar en el callback del frontend (misma
+    # origin que CORS), que sabe procesar todos los formatos de sesión.
+    destino = settings.cors_origins_list[0].rstrip("/") + "/auth/callback"
     try:
         async with httpx.AsyncClient(timeout=10) as cliente:
             respuesta = await cliente.post(
                 f"{settings.supabase_url}/auth/v1/invite",
                 headers=_headers(settings),
+                params={"redirect_to": destino},
                 json={"email": email},
             )
         respuesta.raise_for_status()
