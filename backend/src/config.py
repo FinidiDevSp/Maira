@@ -8,7 +8,7 @@ a mitad de una petición.
 from functools import lru_cache
 from typing import Literal
 
-from pydantic import Field
+from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -33,6 +33,15 @@ class Settings(BaseSettings):
     qdrant_url: str | None = None
     qdrant_api_key: str | None = None
     healthchecks_ping_url: str | None = None
+
+    @field_validator("database_url")
+    @classmethod
+    def normalizar_esquema_asyncpg(cls, url: str) -> str:
+        """Supabase/Render dan URLs postgres(ql)://; este backend es async (asyncpg)."""
+        for prefijo in ("postgresql://", "postgres://"):
+            if url.startswith(prefijo):
+                return "postgresql+asyncpg://" + url.removeprefix(prefijo)
+        return url
 
     @property
     def cors_origins_list(self) -> list[str]:

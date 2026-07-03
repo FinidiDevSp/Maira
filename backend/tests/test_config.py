@@ -19,6 +19,14 @@ def test_cors_origins_se_parsea_como_lista() -> None:
     assert settings.cors_origins_list == ["http://localhost:3000"]
 
 
+def test_database_url_sin_asyncpg_se_normaliza(monkeypatch: pytest.MonkeyPatch) -> None:
+    from src.config import Settings
+
+    monkeypatch.setenv("DATABASE_URL", "postgresql://u:p@host:5432/db")
+    settings = Settings(_env_file=None)  # type: ignore[call-arg]
+    assert settings.database_url == "postgresql+asyncpg://u:p@host:5432/db"
+
+
 def test_falta_secret_key_falla_al_arrancar(monkeypatch: pytest.MonkeyPatch) -> None:
     from src.config import Settings
 
