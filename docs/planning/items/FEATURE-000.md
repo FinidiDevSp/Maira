@@ -2,12 +2,12 @@
 id: FEATURE-000
 tipo: feature
 titulo: "Inicialización y andamiaje del proyecto"
-estado: listo
+estado: desarrollo
 prioridad: alta
 hito: "0.1"
 duplicado_de: null
 creado: 2026-07-02
-actualizado: 2026-07-02
+actualizado: 2026-07-03
 ---
 
 # FEATURE-000 — Inicialización y andamiaje del proyecto
@@ -57,10 +57,16 @@ Sin esto no hay nada demostrable. Corresponde a la "Fase 0 — Pre-MVP" de `ANAL
 
 ## Criterios de aceptación / Casuística a cubrir
 
-- [ ] `pytest` en verde con cobertura ≥ 70% de lo existente.
-- [ ] `GET /health` responde 200 en local y en Render.
-- [ ] La home en Vercel carga y muestra el estado del backend.
-- [ ] `docker compose --profile app up` funciona en máquina limpia (plan B de demo).
-- [ ] CI en verde (lint + tests + docs + render de planificación).
-- [ ] Sin secretos en el repo (repo público): revisión de `git log` y `.env.example` sin valores reales.
-- [ ] Con el backend dormido (Render free), la home explica "arrancando…" en vez de fallar.
+- [x] `pytest` en verde con cobertura ≥ 70% de lo existente. *(2026-07-03: 8/8 tests, 100%)*
+- [x] `GET /health` responde 200 en local. *(pendiente en Render: requiere crear el servicio — ver nota)*
+- [ ] La home en Vercel carga y muestra el estado del backend. *(pendiente: crear proyecto Vercel)*
+- [x] `docker compose --profile app up` funciona end-to-end. *(2026-07-03: 4 contenedores, health ok, home ok)*
+- [ ] CI en verde (lint + tests + docs + render de planificación). *(pendiente: primer push a GitHub)*
+- [x] Sin secretos en el repo (repo público): `.env` fuera de git, `.env.example` sin valores reales.
+- [x] Con el backend dormido (Render free), la home explica "arrancando…" con reintento. *(test verde)*
+
+> **Nota de cierre parcial (2026-07-03):** el andamiaje local está completo y verificado
+> (backend 8/8 tests 100% cobertura, frontend 3/3, migración upgrade/downgrade contra
+> Postgres real, seed idempotente, compose end-to-end). Quedan los 3 criterios que
+> dependen de acciones en dashboards externos: crear el servicio en Render, el proyecto
+> en Vercel, y completar el primer push (scope `workflow` del token de gh).

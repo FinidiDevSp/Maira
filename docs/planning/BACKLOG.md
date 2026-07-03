@@ -7,20 +7,25 @@
 ## 📍 Estado actual
 
 - **Hito activo:** 0.1 — Andamiaje
-- **Progreso:** 0/8 items del MVP en `hecho`
-- **Siguiente:** FEATURE-000 (inicialización y andamiaje) — está en `listo`
-- **Bloqueos:** ninguno
+- **Progreso:** 0/8 items en `hecho`; FEATURE-000 en `desarrollo`, ~85% (local completo y verificado)
+- **Siguiente:** cerrar FEATURE-000 — falta: deploy en Render + Vercel y primer push/CI verde
+- **Bloqueos:** push a GitHub pendiente del scope `workflow` en el token de gh (`gh auth refresh -h github.com -s workflow`)
 - **Recordatorio permanente:** TFM ante tribunal → todo desplegado, gratis y demostrable
-- **Actualizado:** 2026-07-02
+- **Actualizado:** 2026-07-03
 
 ## Items abiertos por estado
 
 <!-- RENDER:START -->
-### 🟢 Listo para desarrollo
+### 🔨 En desarrollo
 
 | Item | Título | Prioridad | Hito |
 |---|---|---|---|
 | [FEATURE-000](items/FEATURE-000.md) | Inicialización y andamiaje del proyecto | alta | 0.1 |
+
+### 🟢 Listo para desarrollo
+
+| Item | Título | Prioridad | Hito |
+|---|---|---|---|
 | [FEATURE-001](items/FEATURE-001.md) | Registro y acceso de la protectora (auth + perfil) | alta | 0.2 |
 | [FEATURE-002](items/FEATURE-002.md) | Alta de animal con fotos | alta | 0.3 |
 | [FEATURE-003](items/FEATURE-003.md) | Generación de ficha de adopción con IA | alta | 0.3 |

@@ -25,7 +25,9 @@ Es un **TFM (3-4 meses, 1 dev)** que se defiende ante un tribunal: todo debe est
 ## Catálogo de funcionalidades (vista de usuario)
 
 <!-- RENDER:START -->
-_Aún no hay funcionalidades disponibles: el proyecto está en construcción._
+**🚧 En camino:**
+
+- Inicialización y andamiaje del proyecto
 <!-- RENDER:END -->
 
 ## Cómo está hecho (mapa técnico)

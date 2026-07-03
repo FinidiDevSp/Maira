@@ -2,6 +2,21 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado semántico.
 
+## [0.0.2] — 2026-07-03
+
+### Añadido
+
+- **Esqueleto backend FastAPI** (FEATURE-000): endpoint `/health`, cabeceras de seguridad, CORS desde configuración, settings validados con pydantic-settings (la app no arranca si falta una variable), logging JSON con structlog.
+- Modelos baseline `protectora` y `usuario` (SQLAlchemy 2.0 async) con migración Alembic 0001 reversible (verificada upgrade→downgrade→upgrade contra Postgres real) y seed idempotente con datos ficticios.
+- **Esqueleto frontend Next.js 14** (FEATURE-000): tokens de color de DESIGN.md con dark mode (next-themes, según sistema), tipografía Inter, base shadcn/ui, y home que muestra el estado del servicio contemplando el cold start de Render ("arrancando…" con reintento).
+- Suite de tests: backend 8/8 (pytest, 100% cobertura) y frontend 3/3 (Vitest + Testing Library); ruff, mypy, ESLint y tsc limpios.
+- Verificación end-to-end con Docker: `docker compose --profile app up` levanta los 4 contenedores `maira-*` y la home consume `/health`.
+- `dependabot.yml` para pip, npm y GitHub Actions.
+
+### Pendiente para cerrar FEATURE-000
+
+- Crear el servicio en Render y el proyecto en Vercel (acción manual en dashboards) y completar el primer push a GitHub (scope `workflow` del token).
+
 ## [0.0.1] — 2026-07-02
 
 ### Añadido

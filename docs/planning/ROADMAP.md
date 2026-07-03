@@ -29,7 +29,7 @@ Después del MVP: fase 2 (multi-protectora, i18n) y fase 3 (Elpis) — ver [`ANA
 
 ### Hito 0.1
 
-- [FEATURE-000](items/FEATURE-000.md) — Inicialización y andamiaje del proyecto · 🟢 Listo para desarrollo
+- [FEATURE-000](items/FEATURE-000.md) — Inicialización y andamiaje del proyecto · 🔨 En desarrollo
 
 ### Hito 0.2
 

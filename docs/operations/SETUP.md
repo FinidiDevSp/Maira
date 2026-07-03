@@ -5,9 +5,9 @@
 - **Python 3.11+**, **Node 20+**, **Docker Desktop** y **git**.
 - Windows: los comandos `make` requieren Git Bash o WSL. Debajo de cada `make` está el comando directo equivalente.
 
-## Arranque rápido (estado actual del repo)
+## Arranque rápido
 
-El código de `backend/` y `frontend/` lo crea **FEATURE-000** (está en `listo`). Hoy ya funciona:
+`backend/` y `frontend/` ya existen (FEATURE-000). Funciona hoy:
 
 ```bash
 # 1. Clonar y preparar entorno
@@ -25,13 +25,14 @@ python scripts/render_planning.py       # make render-planning
 docker compose up -d                    # make up  → maira-db + maira-qdrant
 ```
 
-## Arranque completo (cuando FEATURE-000 esté hecho)
+## Arranque completo
 
 ```bash
-# Backend
+# Backend (usa venv propio: python -m venv .venv && activarlo)
 cd backend
 pip install -e ".[dev]"
-alembic upgrade head                    # make migrate
+alembic upgrade head                    # make migrate (necesita DATABASE_URL y SECRET_KEY en el entorno o .env)
+python scripts/seed.py                  # datos ficticios "Refugio Esperanza"
 uvicorn src.main:app --reload           # http://localhost:8000/docs
 
 # Frontend (otra terminal)
