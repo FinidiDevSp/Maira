@@ -12,6 +12,8 @@ ENV_TEST = {
     "SECRET_KEY": "clave-solo-para-tests-nada-real-0123456789",
     "CORS_ORIGINS": "http://localhost:3000",
     "DATABASE_URL": "sqlite+aiosqlite:///:memory:",
+    "SUPABASE_URL": "https://test-proyecto.supabase.co",
+    "SUPABASE_JWT_SECRET": "secreto-jwt-solo-tests-0123456789abcdef",
 }
 
 

@@ -24,6 +24,8 @@ class Settings(BaseSettings):
     supabase_url: str | None = None
     supabase_anon_key: str | None = None
     supabase_service_key: str | None = None
+    # Solo si el proyecto Supabase usa la clave JWT legacy (HS256); con JWKS no hace falta
+    supabase_jwt_secret: str | None = None
     llm_provider: Literal["groq", "gemini"] = "groq"
     groq_api_key: str | None = None
     gemini_api_key: str | None = None
