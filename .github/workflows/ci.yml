@@ -11,7 +11,7 @@ jobs:
     name: Render de planificación al día
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -25,7 +25,7 @@ jobs:
     name: Sitio de documentación
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -36,7 +36,7 @@ jobs:
     name: Backend (lint + tests)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: ¿Existe el backend? (FEATURE-000 lo crea)
         id: check
         run: |
@@ -63,7 +63,7 @@ jobs:
     name: Frontend (lint + tests)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: ¿Existe el frontend? (FEATURE-000 lo crea)
         id: check
         run: |
@@ -91,7 +91,7 @@ jobs:
     name: Auditoría de dependencias
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: pip-audit (backend)
         run: |
           if [ -f backend/pyproject.toml ]; then
