@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tokens de color de Maira — fuente de verdad: docs/technical/DESIGN.md */
+@layer base {
+  :root {
+    --background: #faf6ef; /* crema */
+    --foreground: #2b2118;
+    --surface: #ffffff;
+    --primary: #bf5b3b; /* terracota */
+    --primary-foreground: #ffffff;
+    --secondary: #6e9075; /* verde salvia */
+    --muted: #8a7a6d;
+    --destructive: #b3362b;
+    --warning: #b37e1f;
+    --success: #4a7a52;
+  }
+
+  .dark {
+    --background: #1c1815;
+    --foreground: #f2eae0;
+    --surface: #262019;
+    --primary: #d97d5c;
+    --primary-foreground: #1c1410;
+    --secondary: #8aae91;
+    --muted: #a89a8c;
+    --destructive: #e05c4f;
+    --warning: #d9a441;
+    --success: #7fb389;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
