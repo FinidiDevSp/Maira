@@ -1,5 +1,7 @@
 version: 2
 updates:
+  # Regla común: sin bumps de versión MAYOR durante el TFM (rompedores, ruido).
+  # Los minors/patches y los avisos de seguridad siguen llegando con normalidad.
   - package-ecosystem: pip
     directory: /backend
     schedule:
@@ -7,6 +9,9 @@ updates:
     labels: [dependencies]
     commit-message:
       prefix: "chore"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: npm
     directory: /frontend
@@ -15,6 +20,9 @@ updates:
     labels: [dependencies]
     commit-message:
       prefix: "chore"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
     directory: /
@@ -23,3 +31,6 @@ updates:
     labels: [dependencies]
     commit-message:
       prefix: "ci"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
