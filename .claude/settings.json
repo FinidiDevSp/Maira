@@ -14,7 +14,8 @@
       "Bash(docker compose:*)",
       "Bash(make:*)",
       "Bash(mkdocs:*)",
-      "Bash(pre-commit:*)"
+      "Bash(pre-commit:*)",
+      "Bash(powershell -NoProfile -Command Get-Content*)"
     ]
   }
 }

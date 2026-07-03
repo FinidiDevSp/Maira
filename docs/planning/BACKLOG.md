@@ -17,11 +17,16 @@
 ## Items abiertos por estado
 
 <!-- RENDER:START -->
-### 🟢 Listo para desarrollo
+### 🔨 En desarrollo
 
 | Item | Título | Prioridad | Hito |
 |---|---|---|---|
 | [FEATURE-001](items/FEATURE-001.md) | Registro y acceso de la protectora (auth + perfil) | alta | 0.2 |
+
+### 🟢 Listo para desarrollo
+
+| Item | Título | Prioridad | Hito |
+|---|---|---|---|
 | [FEATURE-002](items/FEATURE-002.md) | Alta de animal con fotos | alta | 0.3 |
 | [FEATURE-003](items/FEATURE-003.md) | Generación de ficha de adopción con IA | alta | 0.3 |
 | [FEATURE-004](items/FEATURE-004.md) | Registro diario de salud y detección de anomalías | alta | 0.4 |

@@ -54,6 +54,10 @@ Formato: contexto → decisión → consecuencias. Las ADR-001..006 provienen de
 
 **Decisión del usuario:** el "Consejo de Alexandria SDD": Rick (orquestador), Hershel (estratega), Deanna (planificadora), Eugene (codificador), Daryl (QA), Milton (memoria/docs). Solo cambia el nombre; los roles del flujo SDD son fijos.
 
+## D-015 — Identidad delegada en Supabase Auth; backend solo verifica (2026-07-03)
+
+**Contexto:** FEATURE-001 necesita signup, magic link, invitaciones y roles sin que el backend gestione credenciales. **Decisión:** el frontend habla con Supabase Auth (`@supabase/ssr`): magic link como único camino en MVP (passwordless, mejor UX para usuarias no técnicas — US-1.2). El backend verifica el JWT criptográficamente (JWKS con PyJWT; fallback HS256 con `SUPABASE_JWT_SECRET` si el proyecto usa la clave legacy) y resuelve el rol desde la tabla `usuario`. Las invitaciones usan la admin API de GoTrue con la service key. **Consecuencia:** el backend nunca ve contraseñas ni envía emails; los límites de email del free tier de Supabase (~4/hora) son suficientes para 1 protectora piloto.
+
 ## D-014 — Idioma único español con i18n preparado (2026-07-02)
 
 **Decisión:** solo es-ES en MVP (fijado por ANALYSIS.md §18), pero con next-intl y mensajes centralizados desde el primer componente para que fase 2 (ca/eu/gl) no exija refactor.

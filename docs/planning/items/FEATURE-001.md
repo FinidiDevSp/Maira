@@ -2,12 +2,12 @@
 id: FEATURE-001
 tipo: feature
 titulo: "Registro y acceso de la protectora (auth + perfil)"
-estado: listo
+estado: desarrollo
 prioridad: alta
 hito: "0.2"
 duplicado_de: null
 creado: 2026-07-02
-actualizado: 2026-07-02
+actualizado: 2026-07-03
 ---
 
 # FEATURE-001 — Registro y acceso de la protectora
@@ -25,6 +25,11 @@ Una voluntaria puede registrar su protectora, entrar con magic link (sin recorda
 ### Documentación a consultar
 - `docs/technical/ARCHITECTURE.md` (Supabase Auth) · `docs/technical/DATA_MODEL.md` (protectora, usuario)
 - `docs/operations/SECURITY.md` (JWT, RLS, roles)
+
+> **Plan aprobado 2026-07-03 (D-015):** identidad en Supabase Auth desde el frontend
+> (`@supabase/ssr`); el backend solo verifica el JWT (JWKS con PyJWT; fallback HS256 por
+> `SUPABASE_JWT_SECRET` si el proyecto usa clave legacy) y carga perfil/rol de `usuario`.
+> Alta passwordless: el signup invita por email (magic link), sin contraseña en MVP.
 
 ### Seguridad
 - Verificación del JWT de Supabase en el backend (firma + expiración + audiencia).

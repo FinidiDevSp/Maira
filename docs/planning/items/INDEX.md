@@ -6,7 +6,7 @@
 | ID | Título | Estado | Hito |
 |---|---|---|---|
 | [FEATURE-000](FEATURE-000.md) | Inicialización y andamiaje del proyecto | hecho | 0.1 |
-| [FEATURE-001](FEATURE-001.md) | Registro y acceso de la protectora (auth + perfil) | listo | 0.2 |
+| [FEATURE-001](FEATURE-001.md) | Registro y acceso de la protectora (auth + perfil) | desarrollo | 0.2 |
 | [FEATURE-002](FEATURE-002.md) | Alta de animal con fotos | listo | 0.3 |
 | [FEATURE-003](FEATURE-003.md) | Generación de ficha de adopción con IA | listo | 0.3 |
 | [FEATURE-004](FEATURE-004.md) | Registro diario de salud y detección de anomalías | listo | 0.4 |

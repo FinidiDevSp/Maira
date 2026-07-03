@@ -28,6 +28,10 @@ Es un **TFM (3-4 meses, 1 dev)** que se defiende ante un tribunal: todo debe est
 **✅ Disponible hoy:**
 
 - Inicialización y andamiaje del proyecto
+
+**🚧 En camino:**
+
+- Registro y acceso de la protectora (auth + perfil)
 <!-- RENDER:END -->
 
 ## Cómo está hecho (mapa técnico)

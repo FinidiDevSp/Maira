@@ -33,7 +33,7 @@ Después del MVP: fase 2 (multi-protectora, i18n) y fase 3 (Elpis) — ver [`ANA
 
 ### Hito 0.2
 
-- [FEATURE-001](items/FEATURE-001.md) — Registro y acceso de la protectora (auth + perfil) · 🟢 Listo para desarrollo
+- [FEATURE-001](items/FEATURE-001.md) — Registro y acceso de la protectora (auth + perfil) · 🔨 En desarrollo
 
 ### Hito 0.3
 
