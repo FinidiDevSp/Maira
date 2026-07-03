@@ -1,0 +1,57 @@
+{
+  "Home": {
+    "titulo": "Maira",
+    "descripcion": "Plataforma open source para protectoras de animales pequeñas: fichas de adopción con IA, registro diario de salud y triaje veterinario.",
+    "entrar": "Entrar",
+    "registrarProtectora": "Registra tu protectora"
+  },
+  "EstadoBackend": {
+    "comprobando": "Comprobando el servicio…",
+    "ok": "✓ Servicio operativo",
+    "arrancando": "El servicio está arrancando, puede tardar unos segundos…",
+    "caido": "El servicio no responde ahora mismo."
+  },
+  "Login": {
+    "titulo": "Entrar en Maira",
+    "explicacion": "Escribe tu email y te enviaremos un enlace para entrar. Sin contraseñas.",
+    "email": "Tu email",
+    "enviar": "Enviarme el enlace",
+    "enviando": "Enviando…",
+    "enviado": "¡Listo! Revisa tu correo y pulsa el enlace para entrar.",
+    "error": "No hemos podido enviar el enlace. Espera un momento y vuelve a intentarlo.",
+    "emailInvalido": "Ese email no parece válido.",
+    "sinCuenta": "¿Tu protectora aún no está en Maira?",
+    "registrate": "Regístrala aquí"
+  },
+  "Signup": {
+    "titulo": "Registra tu protectora",
+    "explicacion": "Solo necesitamos lo básico. En un minuto estás dentro.",
+    "nombreProtectora": "Nombre de la protectora",
+    "email": "Tu email (será la cuenta de administración)",
+    "personaResponsable": "Persona responsable",
+    "telefono": "Teléfono de contacto",
+    "terminos": "He leído y acepto los términos de uso y la política de privacidad",
+    "crear": "Crear la protectora",
+    "creando": "Creando…",
+    "creada": "¡Protectora creada! Revisa tu correo: te hemos enviado un enlace para entrar.",
+    "nombreCorto": "El nombre debe tener al menos 2 letras.",
+    "emailInvalido": "Ese email no parece válido.",
+    "aceptaTerminos": "Necesitamos que aceptes los términos para continuar.",
+    "yaTienesCuenta": "¿Ya tienes cuenta?",
+    "entra": "Entra aquí"
+  },
+  "Perfil": {
+    "titulo": "Tu protectora",
+    "voluntarias": "Voluntarias",
+    "rol": "Rol",
+    "invitar": "Invitar a una voluntaria",
+    "emailVoluntaria": "Email de la voluntaria",
+    "rolInvitacion": "Rol que tendrá",
+    "enviarInvitacion": "Enviar invitación",
+    "enviando": "Enviando…",
+    "invitada": "Invitación enviada. Le llegará un email con el enlace.",
+    "errorInvitar": "No hemos podido enviar la invitación.",
+    "salir": "Cerrar sesión",
+    "roles": { "admin": "Administradora", "editor": "Editora", "lectura": "Solo lectura" }
+  }
+}
